@@ -1,2 +1,2 @@
-oyster-oauth
+oyster-auth
 ============
