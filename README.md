@@ -1,2 +1,2 @@
-oyster-auth
-============
+# assent
+Validation Library
