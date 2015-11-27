@@ -16,11 +16,9 @@ module.exports = {
     },
     accountObject: {
         id: 1,
-        accountId: 1,
-        userId: 1,
+        accountId: "test@gmail.com",
         type: "local",
         password: "password",
-        username: "test@gmail.com",
         isActive: true,
         createdOn: 1,
         modifiedOn: 1

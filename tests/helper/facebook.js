@@ -51,7 +51,7 @@ describe("Facebook auth test", function() {
         it("Object creation", function(){
 
             var options = {
-                username: "abcxyz"
+                token: "abcxyz"
             };
             var fbHelper = new FaceBookHelper(options);
             expect(true).to.be.true;
@@ -72,14 +72,13 @@ describe("Facebook auth test", function() {
                     var fbUser = fbTestUsers.data[CommonHelper.getRandomInt(0, fbTestUsers.data.length-1)];
                     expect(fbUser).to.be.exist;
                     var fbLoginObject = {
-                        username: fbUser.access_token
+                        token: fbUser.access_token
                     };
                     var fbHelper = new FaceBookHelper(fbLoginObject);
                     return fbHelper.validate().then(function(res) {
                         expect(res).to.be.exist;
                         expect(res.id).to.be.a("number");
-                        expect(res.accountId).to.be.equal(parseInt(fbUser.id));
-                        expect(res.userId).to.be.a("number");
+                        expect(res.accountId).to.be.equal(fbUser.id);
                         expect(res.type).to.be.equal("facebook");
                         expect(res.isActive).to.be.true;
                         expect(res.createdOn).to.be.a("number");

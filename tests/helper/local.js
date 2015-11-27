@@ -51,7 +51,7 @@ describe("Local auth test", function() {
         it("Object creation with only username", function(){
 
             try{
-                var localLoginHelper = new LocalLoginHelper({username: "slkdfj"});
+                var localLoginHelper = new LocalLoginHelper({accountId: "slkdfj"});
             }
             catch(error) {
                 expect(error).to.be.exist;
@@ -77,7 +77,7 @@ describe("Local auth test", function() {
         it("Object creation", function(){
 
             var options = {
-                username: "abcxyz",
+                accountId: "abcxyz",
                 password: "laksdjf"
             };
             var localLoginHelper = new LocalLoginHelper(options);
@@ -96,7 +96,6 @@ describe("Local auth test", function() {
                 expect(res).to.be.exist;
                 expect(res.id).to.be.equal(accountObject.id);
                 expect(res.accountId).to.be.equal(accountObject.accountId);
-                expect(res.userId).to.be.equal(accountObject.userId);
                 expect(res.type).to.be.equal("local");
                 expect(res.isActive).to.be.true;
                 expect(res.createdOn).to.be.equal(accountObject.createdOn);

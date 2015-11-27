@@ -19,7 +19,7 @@ describe("Auth test", function() {
 
             return new authModule().authenticate({
                 type: Config.accountObject.type,
-                username: Config.accountObject.username,
+                accountId: Config.accountObject.accountId,
                 password: Config.accountObject.password
             }).then(function(resp) {
                 console.log("resp", resp);
